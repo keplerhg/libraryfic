@@ -1,22 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Título de la página</title>
+    <title>Animación de letras saltando al abismo</title>
+    <style>
+        @keyframes jump {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-100px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        
+        .jumping-letters span {
+            display: inline-block;
+            animation: jump 1s ease-in-out infinite;
+        }
+        
+        .jumping-letters span:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        .jumping-letters span:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+        
+        .jumping-letters span:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+        
+        .jumping-letters span:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+        
+        .jumping-letters span:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+    </style>
 </head>
 <body>
-    <h1>Encabezado de nivel 1</h1>
-    <p>Este es un párrafo de texto.</p>
-    
-    <h2>Encabezado de nivel 2</h2>
-    <ul>
-        <li>Elemento de lista 1</li>
-        <li>Elemento de lista 2</li>
-        <li>Elemento de lista 3</li>
-    </ul>
-    
-    <h3>Encabezado de nivel 3</h3>
-    <p>Este es otro párrafo de texto.</p>
-    
-    <a href="https://www.ejemplo.com">Enlace a ejemplo.com</a>
+    <h1 class="jumping-letters">
+        <span>L</span>
+        <span>E</span>
+        <span>T</span>
+        <span>R</span>
+        <span>A</span>
+        <span>S</span>
+    </h1>
 </body>
 </html>
