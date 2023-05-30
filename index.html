@@ -3,6 +3,15 @@
 <head>
     <title>Animación de letras saltando al abismo</title>
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: black;
+        }
+        
         @keyframes jump {
             0% {
                 transform: translateY(0);
@@ -15,34 +24,64 @@
             }
         }
         
+        .jumping-letters {
+            text-align: center;
+        }
+        
         .jumping-letters span {
             display: inline-block;
             animation: jump 1s ease-in-out infinite;
+            animation-delay: calc(var(--delay) * 0.1s);
+            color: white;
+            transition: color 0.5s ease-in-out;
+        }
+        
+        .jumping-letters span:hover {
+            color: rgb(
+                var(--r, 255),
+                var(--g, 255),
+                var(--b, 255)
+            );
         }
         
         .jumping-letters span:nth-child(1) {
-            animation-delay: 0s;
+            --delay: 1;
+            --r: 255;
+            --g: 0;
+            --b: 0;
         }
         
         .jumping-letters span:nth-child(2) {
-            animation-delay: 0.1s;
+            --delay: 2;
+            --r: 0;
+            --g: 255;
+            --b: 0;
         }
         
         .jumping-letters span:nth-child(3) {
-            animation-delay: 0.2s;
+            --delay: 3;
+            --r: 0;
+            --g: 0;
+            --b: 255;
         }
         
         .jumping-letters span:nth-child(4) {
-            animation-delay: 0.3s;
+            --delay: 4;
+            --r: 255;
+            --g: 255;
+            --b: 0;
         }
         
         .jumping-letters span:nth-child(5) {
-            animation-delay: 0.4s;
+            --delay: 5;
+            --r: 255;
+            --g: 0;
+            --b: 255;
         }
     </style>
 </head>
 <body>
-    <h1 class="jumping-letters">
+    <div class="jumping-letters">
         <span>K</span>
         <span>E</span>
         <span>P</span>
@@ -61,6 +100,6 @@
         <span> </span>
         <span>F</span>
         <span>C</span>
-    </h1>
+    </div>
 </body>
 </html>
